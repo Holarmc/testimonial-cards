@@ -1,0 +1,202 @@
+/******
+## Colors
+
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+*******/
+/* @font-face {
+  font-family: 'Barlow Semi Condensed';
+  src: url('https://fonts.google.com/specimen/Barlow+Semi+Condensed');
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+} */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: 'Barlow Semi Condensed', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  /* background-color: hsl(210, 46%, 95%); */
+}
+.container {
+  margin: 75px auto auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(210, 46%, 95%);
+  padding: 5%;
+  /* overflow: hidden; */
+  /* width: auto; */
+  /* height: auto; */
+}
+.card {
+  margin-bottom: 25px;
+  width: auto;
+  /* min-width: 412px; */
+  height: auto;
+  padding: 25px;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  box-shadow: 0 10px 50px -10px hsl(212, 23%, 69%);
+}
+.info {
+  top: -5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.info__profile-pics {
+  margin-top: 10px;
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+}
+.info__name {
+  font-size: 0.8rem;
+  margin: 0; /*why does margin:0 still have effect */
+  padding-left: 15px;
+}
+.info__verified {
+  opacity: 50%;
+  display: block;
+}
+.headline {
+  width: auto;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.testimonial {
+  opacity: 70%;
+  width: auto;
+}
+.border {
+  border: solid 0.2em rgba(164, 119, 236, 0.884);
+}
+.one {
+  background-color: hsl(263, 55%, 52%);
+  background-image: url('images/bg-pattern-quotation.svg');
+  background-position: 88% 5%;
+  background-repeat: no-repeat;
+}
+.two {
+  background-color: hsl(217, 19%, 35%);
+}
+.three,
+.five {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(217, 19%, 35%);
+}
+.four {
+  background-color: hsl(219, 29%, 14%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+}
+.link {
+  color: hsl(228, 45%, 44%);
+}
+/********** Tablet view ***********/
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  .container {
+    display: grid;
+    align-items: stretch;
+    margin-top: 60px;
+    /* margin-bottom: 30px; */
+    grid-template-areas:
+      'one one five'
+      'two three five'
+      'four four five';
+    gap: 2% 1.5%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    margin: 0;
+  }
+  .headline {
+    width: auto;
+  }
+  .testimonial {
+    width: auto;
+  }
+  .one {
+    background-position: 84% 5px;
+    grid-area: one;
+  }
+  .two {
+    grid-area: two;
+  }
+  .three {
+    grid-area: three;
+  }
+  .four {
+    grid-area: four;
+  }
+  .five {
+    grid-area: five;
+  }
+}
+/****************** Desktop View *********/
+@media screen and (min-width: 1024px) {
+  .container {
+    display: grid;
+    align-items: stretch;
+    margin-top: 100px;
+    max-width: 1250px;
+    grid-template-areas:
+      'one one two five'
+      'three four four five';
+    gap: 2% 1.5%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    margin: 0;
+  }
+  .headline {
+    width: auto;
+  }
+  .testimonial {
+    width: auto;
+  }
+  .one {
+    background-position: 84% 5px;
+    grid-area: one;
+  }
+  .two {
+    grid-area: two;
+  }
+  .three {
+    grid-area: three;
+  }
+  .four {
+    grid-area: four;
+  }
+  .five {
+    grid-area: five;
+  }
+}
