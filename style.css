@@ -48,7 +48,7 @@ body {
   background-color: hsl(210, 46%, 95%);
   padding: 5%;
   /* overflow: hidden; */
-  /* width: auto; */
+  /* width: 90vw; */
   /* height: auto; */
 }
 .card {
@@ -122,7 +122,7 @@ body {
   color: hsl(228, 45%, 44%);
 }
 /********** Tablet view ***********/
-@media screen and (min-width: 601px) and (max-width: 1280px) {
+@media screen and (min-width: 651px) and (max-width: 1280px) {
   .container {
     display: grid;
     align-items: stretch;
@@ -132,7 +132,7 @@ body {
       'one one five'
       'two three five'
       'four four five';
-    gap: 2% 1.5%;
+    gap: 2% 2%;
     grid-template-columns: repeat(3, 1fr);
   }
   .card {
